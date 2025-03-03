@@ -1,13 +1,33 @@
-const buttonEl = document.querySelector('button');
-const inputEl = document.querySelector('input');
-const listEl = document.querySelector('ul');
+// Vue JS
 
-function addGoal() {
-    const enteredValue = inputEl.value;
-    const listItemEl = document.createElement('li');
-    listItemEl.textContent = enteredValue;
-    listEl.appendChild(listItemEl);
-    inputEl.value = '';
-}
+Vue.createApp({
+    data() { // Data variables
+        return {
+            goals: [],
+            enteredValue: ''
+        };
+    },
+    methods: { // Methods
+        addGoal() {
+            this.goals.push(this.enteredValue);
+            this.enteredValue = '';
+        }
+    }
+}).mount('#app');  // Mount Vue app to element with id app
 
-buttonEl.addEventListener('click', addGoal);
+
+// Vanilla JS
+
+// const buttonEl = document.querySelector('button');
+// const inputEl = document.querySelector('input');
+// const listEl = document.querySelector('ul');
+
+// function addGoal() {
+//     const enteredValue = inputEl.value;
+//     const listItemEl = document.createElement('li');
+//     listItemEl.textContent = enteredValue;
+//     listEl.appendChild(listItemEl);
+//     inputEl.value = '';
+// }
+
+// buttonEl.addEventListener('click', addGoal);
