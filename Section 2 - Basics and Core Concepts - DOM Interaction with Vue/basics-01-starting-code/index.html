@@ -18,7 +18,16 @@
     </header>
     <section id="user-goal">
       <h2>My Course Goal</h2>
-      <p></p>
+      <p>{{ courseGoal }}</p>  <!-- Vue data variable interpolation can be used between html tags -->
+
+      <p>{{ outputGoal() }}</p> <!-- Can call a Vue method with interpolation -->
+
+      <p v-html="courseGoalHeader"></p> <!-- v-html directive can be used to output Vue data variable as html -->
+
+      <!--<p>Learn more <a href="{{ vueLink }}">about Vue</a>.</p>-->  <!-- interpolation is invalid for attributes -->
+      <p>Learn more <a v-bind:href="vueLink">about Vue</a>.</p>  <!-- v-bind directive binds Vue data variable to attribute href -->
+
+
     </section>
   </body>
 </html>
