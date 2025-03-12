@@ -18,8 +18,20 @@
     </header>
     <section id="events">
       <h2>Events in Action</h2>
-      <button v-on:click="counter++">Add</button>
-      <button v-on:click="counter = counter - 1">Remove</button>
+      <!-- Click event listener to increment counter data variable -->
+      <!-- Calls the add() vue method -->
+      <button v-on:click="add">Add</button>
+
+      <!-- add() is also allowed -->
+      <!-- <button v-on:click="add()">Add</button> -->
+
+      <!-- Click event listener to decrement counter data variable -->
+      <!-- <button v-on:click="counter = counter - 1">Remove</button> -->
+      <button v-on:click="subtract">Remove</button>
+
+      <!-- subtract() is also allowed -->
+      <!-- <button v-on:click="subtract()">Remove</button> -->
+
       <p>Result: {{ counter }}</p>
     </section>
   </body>
