@@ -27,6 +27,15 @@
       <button v-on:click="subtract(5)">Remove 5</button>
 
       <p>Result: {{ counter }}</p>
+
+      <!-- On text input, call setName method -->
+      <!-- Calling setName method without () causes the event parameter to be passed by default -->
+      <!-- Current input value can be read from event parameter with vanilla JS event.target.value -->
+      <!-- <input type="text" v-on:input="setName"> -->
+
+      <!-- Can still access event parameter with () and other arguments by using $event -->
+      <input type="text" v-on:input="setName($event, 'Safford')">
+      <p>Your Name: {{ name }}</p>
     </section>
   </body>
 </html>
