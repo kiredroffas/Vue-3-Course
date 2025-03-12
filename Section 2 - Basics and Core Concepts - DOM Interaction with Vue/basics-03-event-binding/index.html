@@ -34,6 +34,9 @@
       <!-- Trigger on right clik -->
       <!-- <button v-on:click.right="subtract(5)">Remove 5</button> -->
 
+      <!-- v-once directive causes event binding to only be ran once -->
+      <p v-once>Starting Counter: {{ counter }}</p>
+
       <p>Result: {{ counter }}</p>
 
       <!-- On text input, call setName method -->
