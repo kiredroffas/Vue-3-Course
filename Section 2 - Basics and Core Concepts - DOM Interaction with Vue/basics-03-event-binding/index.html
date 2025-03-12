@@ -26,6 +26,14 @@
       <!-- Calls the remove() vue method -->
       <button v-on:click="subtract(5)">Remove 5</button>
 
+      <!-- Mouse button click event modifiers -->
+      <!-- Trigger on left click -->
+      <!-- <button v-on:click.left="subtract(5)">Remove 5</button> -->
+      <!-- Trigger on middle click -->
+      <!-- <button v-on:click.middle="subtract(5)">Remove 5</button> -->
+      <!-- Trigger on right clik -->
+      <!-- <button v-on:click.right="subtract(5)">Remove 5</button> -->
+
       <p>Result: {{ counter }}</p>
 
       <!-- On text input, call setName method -->
@@ -34,8 +42,25 @@
       <!-- <input type="text" v-on:input="setName"> -->
 
       <!-- Can still access event parameter with () and other arguments by using $event -->
-      <input type="text" v-on:input="setName($event, 'Safford')">
-      <p>Your Name: {{ name }}</p>
+      <!-- <input type="text" v-on:input="setName($event, 'Safford')"> -->
+      <!-- <p>Your Name: {{ name }}</p> -->
+
+      <!-- Event modifier: v-on:keyup.enter = only trigger confirmInput when enter is pressed and released -->
+      <input type="text" v-on:input="setName($event, 'Safford')" v-on:keyup.enter="confirmInput">
+      <p>Your Name: {{ confirmedName }}</p>
+
+      <!-- Can prevent default form submission by calling event.preventDefault() in submitForm method -->
+      <!-- <form v-on:submit="submitForm">
+        <input type="text">
+        <button>Sign Up</button>
+      </form> -->
+
+      <!-- Or can use event modifier, v-on.submit.prevent acts as preventDefault() -->
+      <form v-on:submit.prevent="submitForm">
+        <input type="text">
+        <button>Sign Up</button>
+      </form>
+
     </section>
   </body>
 </html>
