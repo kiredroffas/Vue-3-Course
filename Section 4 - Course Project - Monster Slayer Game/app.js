@@ -9,7 +9,8 @@ const app = Vue.createApp({
             monsterHealth: 100,
             currentRound: 0,
             winner: null,
-            logMessages: []
+            logMessages: [],
+            logID: 0
         };
     },
     computed: {
@@ -98,8 +99,10 @@ const app = Vue.createApp({
             this.logMessages.unshift({
                 actionBy: who,
                 actionType: what,
-                actionValue: value
+                actionValue: value,
+                id: this.logID
             });
+            this.logID++;
         }
     }
 });
